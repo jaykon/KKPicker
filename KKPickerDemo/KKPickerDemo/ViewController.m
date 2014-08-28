@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "KKAreaPicker.h"
 #import "KKStringPicker.h"
+#import "KKDateTimePicker.h"
 @interface ViewController ()
 - (IBAction)singleComponent:(id)sender;
 - (IBAction)mutiComponent:(id)sender;
@@ -92,6 +93,14 @@
     } onCommit:^(KKAreaPicker *picker, KKAdrress *address) {
         UIButton *btn=sender;
         [btn setTitle:[NSString stringWithFormat:@"选中:%@，%@，%@",address.provice,address.city,address.area] forState:UIControlStateNormal];
+    }];
+}
+
+- (IBAction)dateSelector:(id)sender {
+    [KKDateTimePicker showPickerWithTitle:@"选择日期" pickerMode:UIDatePickerModeDate defaultValue:nil onCancel:^(KKDateTimePicker *picker) {
+        NSLog(@"%@",picker);
+    } onCommit:^(KKDateTimePicker *picker, NSDate *selectedDate) {
+        NSLog(@"%@",selectedDate);
     }];
 }
 @end

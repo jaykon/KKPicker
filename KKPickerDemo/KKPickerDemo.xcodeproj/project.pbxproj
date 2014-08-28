@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9692A58819AF5F7C00DF52C1 /* KKDateTimePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9692A58719AF5F7C00DF52C1 /* KKDateTimePicker.m */; };
 		96AB2671195BD1BA00855583 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96AB2670195BD1BA00855583 /* Foundation.framework */; };
 		96AB2673195BD1BA00855583 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96AB2672195BD1BA00855583 /* CoreGraphics.framework */; };
 		96AB2675195BD1BA00855583 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96AB2674195BD1BA00855583 /* UIKit.framework */; };
@@ -42,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9692A58619AF5F7B00DF52C1 /* KKDateTimePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKDateTimePicker.h; sourceTree = "<group>"; };
+		9692A58719AF5F7C00DF52C1 /* KKDateTimePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKDateTimePicker.m; sourceTree = "<group>"; };
 		96AB266D195BD1BA00855583 /* KKPickerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKPickerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96AB2670195BD1BA00855583 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		96AB2672195BD1BA00855583 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -190,6 +193,8 @@
 				96AB26B0195BD21D00855583 /* KKStringPicker.m */,
 				96AB26B1195BD21D00855583 /* SafeControl.h */,
 				96AB26B2195BD21D00855583 /* SafeControl.m */,
+				9692A58619AF5F7B00DF52C1 /* KKDateTimePicker.h */,
+				9692A58719AF5F7C00DF52C1 /* KKDateTimePicker.m */,
 			);
 			path = KKPicker;
 			sourceTree = "<group>";
@@ -301,6 +306,7 @@
 				96AB26B9195BD21D00855583 /* KKStringPicker.m in Sources */,
 				96AB26B3195BD21D00855583 /* KKAreaPicker.m in Sources */,
 				96AB267D195BD1BA00855583 /* main.m in Sources */,
+				9692A58819AF5F7C00DF52C1 /* KKDateTimePicker.m in Sources */,
 				96AB26B5195BD21D00855583 /* KKPickerAbstract.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -508,6 +514,7 @@
 				96AB26A1195BD1BA00855583 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		96AB26A2195BD1BA00855583 /* Build configuration list for PBXNativeTarget "KKPickerDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +523,7 @@
 				96AB26A4195BD1BA00855583 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
