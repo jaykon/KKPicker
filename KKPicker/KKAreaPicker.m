@@ -55,7 +55,7 @@
                 NSUInteger index1=[[cityDic safeObjectForKey:adress.provice] indexOfObject:adress.city];
                 [defaultSelected safeAddObject:[NSNumber numberWithInt:index1]];
                 if(adress.area){
-                    NSUInteger index2=[[cityDic safeObjectForKey:adress.city] indexOfObject:adress.area];
+                    NSUInteger index2=[[areaDic safeObjectForKey:adress.city] indexOfObject:adress.area];
                     [defaultSelected safeAddObject:[NSNumber numberWithInt:index2]];
                 }
             }

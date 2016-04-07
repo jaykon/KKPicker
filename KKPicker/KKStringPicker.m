@@ -11,7 +11,6 @@
 @property(copy,nonatomic)KKStringPickerCancelBlock cancelBlock;
 @property(copy,nonatomic)KKStringPickerDoneBlock commitBlock;
 @property(strong,nonatomic)NSArray *rowsData;
-@property(strong,nonatomic)UIPickerView *picker;
 @property(assign,nonatomic)NSInteger selectedRowIndex;
 @end
 

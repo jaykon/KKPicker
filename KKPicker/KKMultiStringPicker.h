@@ -7,10 +7,22 @@
 //
 
 #import "KKPickerAbstract.h"
+#import "SafeControl.h"
 @class KKMultiStringPicker;
 typedef void(^KKMultiStringPickerDoneBlock)(KKMultiStringPicker *picker, NSArray *selectedIndexArray, NSArray *selectedValueArray);
 typedef void(^KKMultiStringPickerCancelBlock)(KKMultiStringPicker *picker);
 @interface KKMultiStringPicker : KKPickerAbstract
-+(KKMultiStringPicker*)showPickerWithTitle:(NSString*)aTitle data:(NSArray*)rowsData selectedIndex:(NSArray*)selectedIndexArray onCancel:(KKMultiStringPickerCancelBlock)cancelBlock onCommit:(KKMultiStringPickerDoneBlock)commitBlock;
--(instancetype)initWithTitle:(NSString*)aTitle data:(NSArray*)rowsData selectedIndex:(NSArray*)selectedIndexArray onCancel:(KKMultiStringPickerCancelBlock)cancelBlock onCommit:(KKMultiStringPickerDoneBlock)commitBlock;
+@property(strong,nonatomic)UIPickerView *picker;
+
++(KKMultiStringPicker*)showPickerWithTitle:(NSString*)aTitle
+                                      data:(NSArray*)rowsData
+                             selectedIndex:(NSArray*)selectedIndexArray
+                                  onCancel:(KKMultiStringPickerCancelBlock)cancelBlock
+                                  onCommit:(KKMultiStringPickerDoneBlock)commitBlock;
+
+-(instancetype)initWithTitle:(NSString*)aTitle
+                        data:(NSArray*)rowsData
+               selectedIndex:(NSArray*)selectedIndexArray
+                    onCancel:(KKMultiStringPickerCancelBlock)cancelBlock
+                    onCommit:(KKMultiStringPickerDoneBlock)commitBlock;
 @end

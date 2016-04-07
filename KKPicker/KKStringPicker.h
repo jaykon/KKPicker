@@ -13,5 +13,11 @@ typedef void(^KKStringPickerDoneBlock)(KKStringPicker *picker, NSInteger selecte
 typedef void(^KKStringPickerCancelBlock)(KKStringPicker *picker);
 
 @interface KKStringPicker : KKPickerAbstract
-+(KKStringPicker*)showPickerWithTitle:(NSString*)aTitle data:(NSArray*)rowsData selectedIndex:(NSInteger)selectedIndex onCancel:(KKStringPickerCancelBlock)cancelBlock onCommit:(KKStringPickerDoneBlock)commitBlock;
+@property(strong,nonatomic)UIPickerView *picker;
+
++(KKStringPicker*)showPickerWithTitle:(NSString*)aTitle
+                                 data:(NSArray*)rowsData
+                        selectedIndex:(NSInteger)selectedIndex
+                             onCancel:(KKStringPickerCancelBlock)cancelBlock
+                             onCommit:(KKStringPickerDoneBlock)commitBlock;
 @end

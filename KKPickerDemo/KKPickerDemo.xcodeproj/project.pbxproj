@@ -7,7 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9692A58819AF5F7C00DF52C1 /* KKDateTimePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9692A58719AF5F7C00DF52C1 /* KKDateTimePicker.m */; };
+		969678911CB6626800800183 /* KKAreaPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 969678811CB6626800800183 /* KKAreaPicker.m */; };
+		969678921CB6626800800183 /* KKDateTimePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 969678831CB6626800800183 /* KKDateTimePicker.m */; };
+		969678931CB6626800800183 /* KKMultiStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 969678851CB6626800800183 /* KKMultiStringPicker.m */; };
+		969678941CB6626800800183 /* KKPickerAbstract.m in Sources */ = {isa = PBXBuildFile; fileRef = 969678871CB6626800800183 /* KKPickerAbstract.m */; };
+		969678951CB6626800800183 /* KKPickerArea.plist in Resources */ = {isa = PBXBuildFile; fileRef = 969678881CB6626800800183 /* KKPickerArea.plist */; };
+		969678961CB6626800800183 /* KKPickerCity.plist in Resources */ = {isa = PBXBuildFile; fileRef = 969678891CB6626800800183 /* KKPickerCity.plist */; };
+		969678971CB6626800800183 /* KKPickerProvice.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9696788A1CB6626800800183 /* KKPickerProvice.plist */; };
+		969678981CB6626800800183 /* KKRangePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9696788C1CB6626800800183 /* KKRangePicker.m */; };
+		969678991CB6626800800183 /* KKStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9696788E1CB6626800800183 /* KKStringPicker.m */; };
+		9696789A1CB6626800800183 /* SafeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 969678901CB6626800800183 /* SafeControl.m */; };
+		9696789D1CB6658000800183 /* DemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9696789C1CB6658000800183 /* DemoTableViewController.m */; };
+		9696789F1CB666B100800183 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9696789E1CB666B100800183 /* Launch.storyboard */; };
 		96AB2671195BD1BA00855583 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96AB2670195BD1BA00855583 /* Foundation.framework */; };
 		96AB2673195BD1BA00855583 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96AB2672195BD1BA00855583 /* CoreGraphics.framework */; };
 		96AB2675195BD1BA00855583 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96AB2674195BD1BA00855583 /* UIKit.framework */; };
@@ -15,21 +26,12 @@
 		96AB267D195BD1BA00855583 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96AB267C195BD1BA00855583 /* main.m */; };
 		96AB2681195BD1BA00855583 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96AB2680195BD1BA00855583 /* AppDelegate.m */; };
 		96AB2684195BD1BA00855583 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96AB2682195BD1BA00855583 /* Main.storyboard */; };
-		96AB2687195BD1BA00855583 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96AB2686195BD1BA00855583 /* ViewController.m */; };
 		96AB2689195BD1BA00855583 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96AB2688195BD1BA00855583 /* Images.xcassets */; };
 		96AB2690195BD1BA00855583 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96AB268F195BD1BA00855583 /* XCTest.framework */; };
 		96AB2691195BD1BA00855583 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96AB2670195BD1BA00855583 /* Foundation.framework */; };
 		96AB2692195BD1BA00855583 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96AB2674195BD1BA00855583 /* UIKit.framework */; };
 		96AB269A195BD1BA00855583 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 96AB2698195BD1BA00855583 /* InfoPlist.strings */; };
 		96AB269C195BD1BA00855583 /* KKPickerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96AB269B195BD1BA00855583 /* KKPickerDemoTests.m */; };
-		96AB26B3195BD21D00855583 /* KKAreaPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 96AB26A7195BD21D00855583 /* KKAreaPicker.m */; };
-		96AB26B4195BD21D00855583 /* KKMultiStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 96AB26A9195BD21D00855583 /* KKMultiStringPicker.m */; };
-		96AB26B5195BD21D00855583 /* KKPickerAbstract.m in Sources */ = {isa = PBXBuildFile; fileRef = 96AB26AB195BD21D00855583 /* KKPickerAbstract.m */; };
-		96AB26B6195BD21D00855583 /* KKPickerArea.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96AB26AC195BD21D00855583 /* KKPickerArea.plist */; };
-		96AB26B7195BD21D00855583 /* KKPickerCity.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96AB26AD195BD21D00855583 /* KKPickerCity.plist */; };
-		96AB26B8195BD21D00855583 /* KKPickerProvice.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96AB26AE195BD21D00855583 /* KKPickerProvice.plist */; };
-		96AB26B9195BD21D00855583 /* KKStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 96AB26B0195BD21D00855583 /* KKStringPicker.m */; };
-		96AB26BA195BD21D00855583 /* SafeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 96AB26B2195BD21D00855583 /* SafeControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,8 +45,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9692A58619AF5F7B00DF52C1 /* KKDateTimePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKDateTimePicker.h; sourceTree = "<group>"; };
-		9692A58719AF5F7C00DF52C1 /* KKDateTimePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKDateTimePicker.m; sourceTree = "<group>"; };
+		969678801CB6626800800183 /* KKAreaPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKAreaPicker.h; sourceTree = "<group>"; };
+		969678811CB6626800800183 /* KKAreaPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAreaPicker.m; sourceTree = "<group>"; };
+		969678821CB6626800800183 /* KKDateTimePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKDateTimePicker.h; sourceTree = "<group>"; };
+		969678831CB6626800800183 /* KKDateTimePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKDateTimePicker.m; sourceTree = "<group>"; };
+		969678841CB6626800800183 /* KKMultiStringPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMultiStringPicker.h; sourceTree = "<group>"; };
+		969678851CB6626800800183 /* KKMultiStringPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMultiStringPicker.m; sourceTree = "<group>"; };
+		969678861CB6626800800183 /* KKPickerAbstract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKPickerAbstract.h; sourceTree = "<group>"; };
+		969678871CB6626800800183 /* KKPickerAbstract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKPickerAbstract.m; sourceTree = "<group>"; };
+		969678881CB6626800800183 /* KKPickerArea.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KKPickerArea.plist; sourceTree = "<group>"; };
+		969678891CB6626800800183 /* KKPickerCity.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KKPickerCity.plist; sourceTree = "<group>"; };
+		9696788A1CB6626800800183 /* KKPickerProvice.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KKPickerProvice.plist; sourceTree = "<group>"; };
+		9696788B1CB6626800800183 /* KKRangePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKRangePicker.h; sourceTree = "<group>"; };
+		9696788C1CB6626800800183 /* KKRangePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKRangePicker.m; sourceTree = "<group>"; };
+		9696788D1CB6626800800183 /* KKStringPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKStringPicker.h; sourceTree = "<group>"; };
+		9696788E1CB6626800800183 /* KKStringPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKStringPicker.m; sourceTree = "<group>"; };
+		9696788F1CB6626800800183 /* SafeControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SafeControl.h; sourceTree = "<group>"; };
+		969678901CB6626800800183 /* SafeControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SafeControl.m; sourceTree = "<group>"; };
+		9696789B1CB6658000800183 /* DemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoTableViewController.h; sourceTree = "<group>"; };
+		9696789C1CB6658000800183 /* DemoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoTableViewController.m; sourceTree = "<group>"; };
+		9696789E1CB666B100800183 /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
 		96AB266D195BD1BA00855583 /* KKPickerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKPickerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96AB2670195BD1BA00855583 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		96AB2672195BD1BA00855583 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -56,27 +76,12 @@
 		96AB267F195BD1BA00855583 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		96AB2680195BD1BA00855583 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		96AB2683195BD1BA00855583 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		96AB2685195BD1BA00855583 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		96AB2686195BD1BA00855583 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		96AB2688195BD1BA00855583 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		96AB268E195BD1BA00855583 /* KKPickerDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KKPickerDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96AB268F195BD1BA00855583 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		96AB2697195BD1BA00855583 /* KKPickerDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KKPickerDemoTests-Info.plist"; sourceTree = "<group>"; };
 		96AB2699195BD1BA00855583 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		96AB269B195BD1BA00855583 /* KKPickerDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKPickerDemoTests.m; sourceTree = "<group>"; };
-		96AB26A6195BD21D00855583 /* KKAreaPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKAreaPicker.h; sourceTree = "<group>"; };
-		96AB26A7195BD21D00855583 /* KKAreaPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAreaPicker.m; sourceTree = "<group>"; };
-		96AB26A8195BD21D00855583 /* KKMultiStringPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMultiStringPicker.h; sourceTree = "<group>"; };
-		96AB26A9195BD21D00855583 /* KKMultiStringPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMultiStringPicker.m; sourceTree = "<group>"; };
-		96AB26AA195BD21D00855583 /* KKPickerAbstract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKPickerAbstract.h; sourceTree = "<group>"; };
-		96AB26AB195BD21D00855583 /* KKPickerAbstract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKPickerAbstract.m; sourceTree = "<group>"; };
-		96AB26AC195BD21D00855583 /* KKPickerArea.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KKPickerArea.plist; sourceTree = "<group>"; };
-		96AB26AD195BD21D00855583 /* KKPickerCity.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KKPickerCity.plist; sourceTree = "<group>"; };
-		96AB26AE195BD21D00855583 /* KKPickerProvice.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KKPickerProvice.plist; sourceTree = "<group>"; };
-		96AB26AF195BD21D00855583 /* KKStringPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKStringPicker.h; sourceTree = "<group>"; };
-		96AB26B0195BD21D00855583 /* KKStringPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKStringPicker.m; sourceTree = "<group>"; };
-		96AB26B1195BD21D00855583 /* SafeControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SafeControl.h; sourceTree = "<group>"; };
-		96AB26B2195BD21D00855583 /* SafeControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SafeControl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,10 +108,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9696787F1CB6626800800183 /* KKPicker */ = {
+			isa = PBXGroup;
+			children = (
+				969678801CB6626800800183 /* KKAreaPicker.h */,
+				969678811CB6626800800183 /* KKAreaPicker.m */,
+				969678821CB6626800800183 /* KKDateTimePicker.h */,
+				969678831CB6626800800183 /* KKDateTimePicker.m */,
+				969678841CB6626800800183 /* KKMultiStringPicker.h */,
+				969678851CB6626800800183 /* KKMultiStringPicker.m */,
+				969678861CB6626800800183 /* KKPickerAbstract.h */,
+				969678871CB6626800800183 /* KKPickerAbstract.m */,
+				969678881CB6626800800183 /* KKPickerArea.plist */,
+				969678891CB6626800800183 /* KKPickerCity.plist */,
+				9696788A1CB6626800800183 /* KKPickerProvice.plist */,
+				9696788B1CB6626800800183 /* KKRangePicker.h */,
+				9696788C1CB6626800800183 /* KKRangePicker.m */,
+				9696788D1CB6626800800183 /* KKStringPicker.h */,
+				9696788E1CB6626800800183 /* KKStringPicker.m */,
+				9696788F1CB6626800800183 /* SafeControl.h */,
+				969678901CB6626800800183 /* SafeControl.m */,
+			);
+			name = KKPicker;
+			path = ../KKPicker;
+			sourceTree = "<group>";
+		};
 		96AB2664195BD1BA00855583 = {
 			isa = PBXGroup;
 			children = (
-				96AB26A5195BD21D00855583 /* KKPicker */,
+				9696787F1CB6626800800183 /* KKPicker */,
 				96AB2676195BD1BA00855583 /* KKPickerDemo */,
 				96AB2695195BD1BA00855583 /* KKPickerDemoTests */,
 				96AB266F195BD1BA00855583 /* Frameworks */,
@@ -140,10 +170,11 @@
 				96AB267F195BD1BA00855583 /* AppDelegate.h */,
 				96AB2680195BD1BA00855583 /* AppDelegate.m */,
 				96AB2682195BD1BA00855583 /* Main.storyboard */,
-				96AB2685195BD1BA00855583 /* ViewController.h */,
-				96AB2686195BD1BA00855583 /* ViewController.m */,
 				96AB2688195BD1BA00855583 /* Images.xcassets */,
 				96AB2677195BD1BA00855583 /* Supporting Files */,
+				9696789B1CB6658000800183 /* DemoTableViewController.h */,
+				9696789C1CB6658000800183 /* DemoTableViewController.m */,
+				9696789E1CB666B100800183 /* Launch.storyboard */,
 			);
 			path = KKPickerDemo;
 			sourceTree = "<group>";
@@ -175,28 +206,6 @@
 				96AB2698195BD1BA00855583 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		96AB26A5195BD21D00855583 /* KKPicker */ = {
-			isa = PBXGroup;
-			children = (
-				96AB26A6195BD21D00855583 /* KKAreaPicker.h */,
-				96AB26A7195BD21D00855583 /* KKAreaPicker.m */,
-				96AB26A8195BD21D00855583 /* KKMultiStringPicker.h */,
-				96AB26A9195BD21D00855583 /* KKMultiStringPicker.m */,
-				96AB26AA195BD21D00855583 /* KKPickerAbstract.h */,
-				96AB26AB195BD21D00855583 /* KKPickerAbstract.m */,
-				96AB26AC195BD21D00855583 /* KKPickerArea.plist */,
-				96AB26AD195BD21D00855583 /* KKPickerCity.plist */,
-				96AB26AE195BD21D00855583 /* KKPickerProvice.plist */,
-				96AB26AF195BD21D00855583 /* KKStringPicker.h */,
-				96AB26B0195BD21D00855583 /* KKStringPicker.m */,
-				96AB26B1195BD21D00855583 /* SafeControl.h */,
-				96AB26B2195BD21D00855583 /* SafeControl.m */,
-				9692A58619AF5F7B00DF52C1 /* KKDateTimePicker.h */,
-				9692A58719AF5F7C00DF52C1 /* KKDateTimePicker.m */,
-			);
-			path = KKPicker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,11 +285,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				96AB2689195BD1BA00855583 /* Images.xcassets in Resources */,
-				96AB26B8195BD21D00855583 /* KKPickerProvice.plist in Resources */,
-				96AB26B6195BD21D00855583 /* KKPickerArea.plist in Resources */,
+				969678971CB6626800800183 /* KKPickerProvice.plist in Resources */,
+				969678951CB6626800800183 /* KKPickerArea.plist in Resources */,
 				96AB267B195BD1BA00855583 /* InfoPlist.strings in Resources */,
+				9696789F1CB666B100800183 /* Launch.storyboard in Resources */,
 				96AB2684195BD1BA00855583 /* Main.storyboard in Resources */,
-				96AB26B7195BD21D00855583 /* KKPickerCity.plist in Resources */,
+				969678961CB6626800800183 /* KKPickerCity.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,15 +309,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96AB26BA195BD21D00855583 /* SafeControl.m in Sources */,
-				96AB2687195BD1BA00855583 /* ViewController.m in Sources */,
-				96AB26B4195BD21D00855583 /* KKMultiStringPicker.m in Sources */,
 				96AB2681195BD1BA00855583 /* AppDelegate.m in Sources */,
-				96AB26B9195BD21D00855583 /* KKStringPicker.m in Sources */,
-				96AB26B3195BD21D00855583 /* KKAreaPicker.m in Sources */,
+				9696789A1CB6626800800183 /* SafeControl.m in Sources */,
+				969678931CB6626800800183 /* KKMultiStringPicker.m in Sources */,
+				9696789D1CB6658000800183 /* DemoTableViewController.m in Sources */,
+				969678991CB6626800800183 /* KKStringPicker.m in Sources */,
+				969678981CB6626800800183 /* KKRangePicker.m in Sources */,
+				969678911CB6626800800183 /* KKAreaPicker.m in Sources */,
+				969678921CB6626800800183 /* KKDateTimePicker.m in Sources */,
+				969678941CB6626800800183 /* KKPickerAbstract.m in Sources */,
 				96AB267D195BD1BA00855583 /* main.m in Sources */,
-				9692A58819AF5F7C00DF52C1 /* KKDateTimePicker.m in Sources */,
-				96AB26B5195BD21D00855583 /* KKPickerAbstract.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

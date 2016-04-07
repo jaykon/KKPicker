@@ -7,6 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+
+//样式
+#define kBarColor [UIColor darkGrayColor]
+#define kBarTextColor [UIColor whiteColor]
+#define kBarItemTextColor [UIColor blueColor]
+
 @protocol KKPickerAbstractDelegate
 @optional
 -(void)KKPickerCancel;
