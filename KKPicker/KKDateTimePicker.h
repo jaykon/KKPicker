@@ -2,8 +2,8 @@
 //  KKDateTimePicker.h
 //  KKPickerDemo
 //
-//  Created by Jaykon on 14-8-28.
-//  Copyright (c) 2014年 Jaykon. All rights reserved.
+//  Created by jaykon on 14-8-28.
+//  Copyright (c) 2014年 jaykon. All rights reserved.
 //
 
 #import "KKPickerAbstract.h"

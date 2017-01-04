@@ -2,8 +2,8 @@
 //  KKStringPicker.h
 //  stock
 //
-//  Created by Jaykon on 14-5-22.
-//  Copyright (c) 2014年 Maxicn. All rights reserved.
+//  Created by jaykon on 14-5-22.
+//  Copyright (c) 2014年 jaykon. All rights reserved.
 //
 
 #import "KKPickerAbstract.h"

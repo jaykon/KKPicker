@@ -2,8 +2,8 @@
 //  KKPickerAbstract.m
 //  stock
 //
-//  Created by Jaykon on 14-5-22.
-//  Copyright (c) 2014年 Maxicn. All rights reserved.
+//  Created by jaykon on 14-5-22.
+//  Copyright (c) 2014年 jaykon. All rights reserved.
 //
 
 #import "KKPickerAbstract.h"
@@ -30,13 +30,12 @@
         
         UIToolbar* numberToolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0,wW, 44)];
         numberToolbar.barStyle = UIBarStyleBlackTranslucent;
-        numberToolbar.backgroundColor=kBarColor;
         UIBarButtonItem *barCancel=[[UIBarButtonItem alloc]initWithTitle:@"  取消" style:UIBarButtonItemStylePlain target:self action:@selector(KKPickerCancel)];
-        [barCancel setTintColor:kBarItemTextColor];
+        [barCancel setTintColor:[UIColor whiteColor]];
         UIBarButtonItem *barCommit=[[UIBarButtonItem alloc]initWithTitle:@"确定  " style:UIBarButtonItemStylePlain target:self action:@selector(KKPickerCommit)];
-        [barCommit setTintColor:kBarItemTextColor];
+        [barCommit setTintColor:[UIColor whiteColor]];
         UIBarButtonItem *middleBarItem=[[UIBarButtonItem alloc]initWithTitle:aTitle style:UIBarButtonItemStylePlain target:nil action:nil];
-        [middleBarItem setTintColor:kBarTextColor];
+        [middleBarItem setTintColor:[UIColor whiteColor]];
         numberToolbar.items = [NSArray arrayWithObjects:
                                barCancel,
                                [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],

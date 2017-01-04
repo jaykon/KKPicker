@@ -2,8 +2,8 @@
 //  KKDateTimePicker.m
 //  KKPickerDemo
 //
-//  Created by Jaykon on 14-8-28.
-//  Copyright (c) 2014年 Jaykon. All rights reserved.
+//  Created by jaykon on 14-8-28.
+//  Copyright (c) 2014年 jaykon. All rights reserved.
 //
 
 #import "KKDateTimePicker.h"
@@ -21,7 +21,7 @@
     picker.picker.datePickerMode=pickerMode;
     picker.cancelBlock=cancelBlock;
     picker.commitBlock=commitBlock;
-    picker.picker.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];
+    //picker.picker.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];
     if(defaultDate){
         picker.picker.date=defaultDate;
     }
@@ -41,13 +41,17 @@
 
 -(void)KKPickerCancel
 {
-    self.cancelBlock(self);
+    if (self.cancelBlock) {
+        self.cancelBlock(self);
+    }
     [self hide];
 }
 
 -(void)KKPickerCommit
 {
-    self.commitBlock(self,_picker.date);
+    if (self.commitBlock) {
+        self.commitBlock(self,_picker.date);
+    }
     [self hide];
 }
 

@@ -37,11 +37,14 @@
             }];
             break;
         case 1:{
-            NSArray *dataArray=@[
-                                 @[@"KK1",@"KK2"],
-                                 @{@"KK1":@[@"KK1-1",@"KK1-2"],@"KK2":@[@"KK2-1",@"KK2-2"]}
-                                 ];
-            [KKMultiStringPicker showPickerWithTitle:@"多列关联选择" data:dataArray selectedIndex:@[@"3",@"1"] onCancel:^(KKMultiStringPicker *picker) {
+            NSArray *rowsData=@[
+                                @[@"aa",@"bb"],
+                                @{@"aa":@[@"aa-1",@"aa-2"],@"bb":@[@"bb-1",@"bb-2"]},
+                                @{
+                                    @"aa":@{@"aa-1":@[@"aa-1-1",@"aa-1-2"],@"aa-2":@[@"aa-2-1",@"aa-2-2"]},
+                                    @"bb":@{@"bb-2":@[@"bb-2-1",@"bb-2-2"]}}
+                                ];
+            [KKMultiStringPicker showPickerWithTitle:@"三列关联选择" data:rowsData selectedIndex:@[@"3",@"1"] onCancel:^(KKMultiStringPicker *picker) {
                 ;
             } onCommit:^(KKMultiStringPicker *picker, NSArray *selectedIndexArray, NSArray *selectedValueArray) {
                 NSLog(@"选中%@,%@",selectedValueArray[0],selectedValueArray[1]);
@@ -87,16 +90,22 @@
             }];
         }break;
         case 7:{
-            [KKRangePicker showNumberRangePickerWithTitle:@"选择月收入范围" range:NSMakeRange(1000,9000) maxDiff:5000 selectedValue:nil onCancel:^(KKRangePicker *picker) {
+            [KKRangePicker showNumberRangePickerWithTitle:@"选择月收入范围" range:NSMakeRange(1000,9000) selectedRange:NSMakeRange(2000,3000) onCancel:^(KKRangePicker *picker) {
                 NSLog(@"取消");
-            } onCommit:^(KKRangePicker *picker, NSString *selectedValue0, NSString *selectedValue1) {
-                NSLog(@"选中:%@ - %@",selectedValue0,selectedValue1);
+            } onCommit:^(KKRangePicker *picker, NSRange selectedRange) {
+                NSLog(@"选中:%d - %d",selectedRange.location,selectedRange.location+selectedRange.length);
             }];
         }break;
         case 8:{
+            [KKAreaPicker showPickerWithProviceCityPickerWithTitle:@"选择地区" defaultValue:nil optionalCitiesOfProvince:@[@"北京",@"上海",@"天津",@"重庆",@"澳门",@"香港",@"台湾"] onCancel:nil onCommit:^(KKAreaPicker *picker, KKAdrress *address) {
+                NSLog(@"选中:%@，%@，%@",address.provice,address.city,address.area);
+            }];
             
         }break;
         case 9:{
+            [KKAreaPicker showPickerWithProviceCityAreaPickerWithTitle:@"选择地区" defaultValue:nil optionalCitiesOfProvince:nil areaOptional:YES onCancel:nil onCommit:^(KKAreaPicker *picker, KKAdrress *address) {
+                NSLog(@"选中:%@，%@，%@",address.provice,address.city,address.area);
+            }];
             
         }break;
         case 10:{

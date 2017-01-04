@@ -2,8 +2,8 @@
 //  KKMultiStringPicker.m
 //  stock
 //
-//  Created by Jaykon on 14-5-22.
-//  Copyright (c) 2014年 Maxicn. All rights reserved.
+//  Created by jaykon on 14-5-22.
+//  Copyright (c) 2014年 jaykon. All rights reserved.
 //
 
 #import "KKMultiStringPicker.h"
@@ -62,7 +62,7 @@
         [_picker reloadAllComponents];
         
         for (int i=0; i<[selectedIndexArray count]; i++) {
-            if(i>=[rowsData count]||[selectedIndexArray[i] intValue]>[_picker numberOfRowsInComponent:i]){
+            if(i>=[rowsData count]||[selectedIndexArray[i] intValue]>[_picker numberOfRowsInComponent:i]||[selectedIndexArray[i] intValue]<0){
                 break;
             }
             [_picker selectRow:[selectedIndexArray[i] intValue] inComponent:i animated:NO];
@@ -70,58 +70,6 @@
     }
     return self;
 }
-
-/*
--(BOOL)analyzData:(id)data level:(int)cLevel
-{
-    if([data isKindOfClass:[NSArray class]]){
-        _componentDataArray[cLevel]=data;
-        cLevel++;
-        [self analyzData:data[0] level:cLevel];
-    }else if([data isKindOfClass:[NSDictionary class]]){
-        NSDictionary *tDic=data;
-        NSArray *keys=[tDic allKeys];
-        
-        if([keys count]!=2){
-            return NO;
-        }
-        
-        if([tDic[keys[0]] isKindOfClass:[NSString class]]){
-            [_keyArray addObject:keys[0]];
-            [_valueArray addObject:keys[1]];
-            [self analyzData:tDic[keys[1]] level:cLevel];
-        }else{
-            [_keyArray addObject:keys[1]];
-            [_valueArray addObject:keys[0]];
-            [self analyzData:tDic[keys[0]] level:cLevel];
-        }
-    }else if ([data isKindOfClass:[NSString class]]){
-        
-    }
-    return YES;
-}
-
-
--(NSArray*)nextComponentData:(id)data CurrentLevel:(int)cLevel targetLevel:(int)tLevel row:(int)targetRow
-{
-    if(cLevel==tLevel){
-        if([data isKindOfClass:[NSArray class]]){
-            return data;
-        }else{
-            return [data objectForKey:_valueArray[cLevel-1]];
-        }
-    }else{
-        id tem;
-        if([data[targetRow] isKindOfClass:[NSArray class]]){
-            tem=data[targetRow];
-        }else{
-            tem=[data[targetRow] objectForKey:_valueArray[cLevel]];
-        }
-        cLevel++;
-        return [self nextComponentData:tem CurrentLevel:cLevel targetLevel:tLevel row:targetRow];
-    }
-}
-*/
 
 #pragma mark -- UIPickerViewDataSource
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
@@ -131,12 +79,9 @@
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    if([_rowsData[component] isKindOfClass:[NSArray class]]){
-        return [_rowsData[component] count];
-    }else if ([_rowsData[component] isKindOfClass:[NSDictionary class]]){
-        return [[_rowsData[component] valueForKey:_selectedRowValueArray[component-1]] count];
-    }
-    return 0;
+    id obj=_rowsData[component];
+    NSArray *rows=[self rowArrayWithObj:obj loopCount:0];
+    return [rows count];
     //NSLog(@"component(%d)=>%d",component,[self.rowsData[component] count]);
 }
 
@@ -144,24 +89,35 @@
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
     id obj=_rowsData[component];
-    NSString *returnString;
-    if([obj isKindOfClass:[NSDictionary class]]){
-        returnString =[[obj safeObjectForKey:_selectedRowValueArray[component-1]] safeObjectAtIndex:row];
-    }else if([obj isKindOfClass:[NSArray class]]){
-        returnString= _rowsData[component][row];
-    }
-    return returnString==nil?@"":returnString;
+    NSArray *rows=[self rowArrayWithObj:obj loopCount:0];
+    NSString *title=[rows safeObjectAtIndex:row];
+    return title?title:@"";
 }
 
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
-{
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     _selectedRowIndexArray[component]=[NSNumber numberWithInt:row];
-    _selectedRowValueArray[component]=[self pickerView:nil titleForRow:row forComponent:component];
+    _selectedRowValueArray[component]=[self pickerView:_picker titleForRow:row forComponent:component];
     if(component<[_rowsData count]-1){
         [_picker reloadComponent:component+1];
         [self pickerView:_picker didSelectRow:0 inComponent:component+1];
         [_picker selectRow:0 inComponent:component+1 animated:YES];
     }
+}
+
+-(NSArray*)rowArrayWithObj:(id)obj loopCount:(NSInteger)loopCount{
+    if ([obj isKindOfClass:[NSDictionary class]]) {
+        id obj2=[obj safeObjectForKey:[_selectedRowValueArray safeObjectAtIndex:loopCount]];
+        if ([obj2 isKindOfClass:[NSDictionary class]]) {
+            NSInteger loopNextCount=loopCount+1;
+            return [self rowArrayWithObj:obj2 loopCount:loopNextCount];
+        }else if ([obj2 isKindOfClass:[NSArray class]]){
+            return obj2;
+        }
+        return @[];
+    }else if ([obj isKindOfClass:[NSArray class]]){
+        return obj;
+    }
+    return @[];
 }
 
 #pragma mark -KKPickerAbstractDelegate
@@ -187,7 +143,9 @@
 
 -(void)KKPickerCommit
 {
-    self.commitBlock(self,_selectedRowIndexArray,_selectedRowValueArray);
+    if (self.commitBlock) {
+        self.commitBlock(self,_selectedRowIndexArray,_selectedRowValueArray);
+    }
     [self hide];
 }
 @end

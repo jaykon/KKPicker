@@ -11,7 +11,7 @@
 @class KKRangePicker;
 
 typedef void(^KKNumberPickerDoneBlock)(KKRangePicker *picker, NSString *selectedValue);
-typedef void(^KKRangePickerDoneBlock)(KKRangePicker *picker, NSString *selectedValue0,NSString *selectedValue1);
+typedef void(^KKRangePickerDoneBlock)(KKRangePicker *picker, NSRange selectedRange);
 typedef void(^KKRangePickerCancelBlock)(KKRangePicker *picker);
 
 @interface KKRangePicker : KKPickerAbstract
@@ -41,8 +41,7 @@ typedef void(^KKRangePickerCancelBlock)(KKRangePicker *picker);
  */
 +(KKRangePicker*)showNumberRangePickerWithTitle:(NSString*)aTitle
                                           range:(NSRange)range
-                                        maxDiff:(NSInteger)maxDiff
-                                  selectedValue:(NSString*)selectedValue
+                                  selectedRange:(NSRange)selectedRange
                                        onCancel:(KKRangePickerCancelBlock)cancelBlock
                                        onCommit:(KKRangePickerDoneBlock)commitBlock;
 @end

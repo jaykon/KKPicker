@@ -2,8 +2,8 @@
 //  KKStringPicker.m
 //  stock
 //
-//  Created by Jaykon on 14-5-22.
-//  Copyright (c) 2014年 Maxicn. All rights reserved.
+//  Created by jaykon on 14-5-22.
+//  Copyright (c) 2014年 jaykon. All rights reserved.
 //
 
 #import "KKStringPicker.h"
@@ -30,7 +30,7 @@
         self.commitBlock=commitBlock;
         self.rowsData=rowsData;
         [_picker reloadAllComponents];
-        if(selectedIndex<[rowsData count]){
+        if(selectedIndex<[rowsData count] && selectedIndex>=0){
             [_picker selectRow:selectedIndex inComponent:0 animated:NO];
         }
     }
@@ -74,13 +74,17 @@
 
 -(void)KKPickerCancel
 {
-    self.cancelBlock(self);
+    if (self.cancelBlock) {
+        self.cancelBlock(self);
+    }
     [self hide];
 }
 
 -(void)KKPickerCommit
 {
-    self.commitBlock(self,_selectedRowIndex,_rowsData[_selectedRowIndex]);
+    if (self.commitBlock) {
+        self.commitBlock(self,_selectedRowIndex,_rowsData[_selectedRowIndex]);
+    }
     [self hide];
 }
 @end

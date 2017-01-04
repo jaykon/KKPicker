@@ -7,6 +7,9 @@
 //
 
 #import "SafeControl.h"
+@implementation SafeControl
+@end
+
 @implementation NSDictionary(SafeControl)
 - (id)safeObjectForKey:(id)aKey
 {
@@ -17,6 +20,31 @@
     }
     return result;
 }
+
+- (BOOL)safeWriteToPlistWithPath:(NSString*)path
+{
+    NSData * data = [NSKeyedArchiver archivedDataWithRootObject:self];
+    NSLog(@"写入DIC文件:%@",path);
+    return [data writeToFile:path atomically:YES];
+}
+
++ (instancetype)safeReadFromPlistWithPath:(NSString*)path
+{
+    NSLog(@"读取DIC文件:%@",path);
+    NSData * data = [NSData dataWithContentsOfFile:path];
+    return  [NSKeyedUnarchiver unarchiveObjectWithData:data];
+}
+@end
+
+@implementation NSMutableDictionary(SafeControl)
+- (BOOL)safeSetObject:(id)anObject forKey:(id <NSCopying>)aKey
+{
+    if(!anObject||!aKey){
+        return NO;
+    }
+    [self setObject:anObject forKey:aKey];
+    return YES;
+}
 @end
 
 @implementation NSMutableArray (SafeControl)
@@ -24,6 +52,18 @@
 {
     if(obj!=nil&&[obj isKindOfClass:[NSObject class]]){
         [self addObject:obj];
+        return YES;
+    }
+    return NO;
+}
+
+-(BOOL)safeAddObject:(id)obj defalut:(id)defalutValue
+{
+    if(obj!=nil&&[obj isKindOfClass:[NSObject class]]){
+        [self addObject:obj];
+        return YES;
+    }else if(defalutValue!=nil && [obj isKindOfClass:[NSObject class]]){
+        [self addObject:defalutValue];
         return YES;
     }
     return NO;
@@ -43,9 +83,27 @@
     return NO;
 }
 
+- (BOOL)safeWriteToPlistWithPath:(NSString*)path
+{
+     NSLog(@"写入Array文件:%@",path);
+    NSData * data = [NSKeyedArchiver archivedDataWithRootObject:self];
+    return [data writeToFile:path atomically:YES];
+}
+
++ (instancetype)safeReadFromPlistWithPath:(NSString*)path
+{
+     NSLog(@"读取Array文件:%@",path);
+    NSData * data = [NSData dataWithContentsOfFile:path];
+    return  [NSKeyedUnarchiver unarchiveObjectWithData:data];
+}
 @end
 
 @implementation NSArray(SafeControl)
+- (id)safeObjectForKey:(id)aKey
+{
+    return nil;
+}
+
 -(id)safeObjectAtIndex:(NSUInteger)index
 {
     if(index<[self count]){
