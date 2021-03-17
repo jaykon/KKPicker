@@ -34,7 +34,7 @@ KKAdrress *address=[[KKAdrress alloc] init];
 address.provice=@"广东";
 address.city=@"广州";
 address.area=@"天河区";
-[KKAreaPicker showPickerWithTitle:@"省市区选择" pickerType:KKAreaPickerTypeProviceCityArea defaultValue:address onCancel:^(KKAreaPicker *picker) {} onCommit:^(KKAreaPicker *picker, KKAdrress *address) {}];
+[KKAreaPicker showPickerWithTitle:@"省市区选择器" pickerType:KKAreaPickerTypeProviceCityArea defaultValue:address onCancel:^(KKAreaPicker *picker) {} onCommit:^(KKAreaPicker *picker, KKAdrress *address) {}];
 
 //日期
 [KKDateTimePicker showPickerWithTitle:@"选择日期" pickerMode:UIDatePickerModeDate defaultValue:nil onCancel:^(KKDateTimePicker *picker) {
