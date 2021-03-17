@@ -64,4 +64,3 @@ address.area=@"天河区";
 ### require:
 ARC;
 iOS5+;
-using block;
