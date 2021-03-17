@@ -33,28 +33,36 @@
         self.selectedRowIndexArray=[[NSMutableArray alloc] initWithArray:selectedIndexArray];
         self.selectedRowValueArray=[[NSMutableArray alloc] init];
         
-        
         for (int i=0; i<[rowsData count]; i++) {
             
             int selectedIndex=[[selectedIndexArray safeObjectAtIndex:i] intValue];
             
             if([rowsData[i] isKindOfClass:[NSArray class]]){
+                NSString *selectedValue=[rowsData[i] safeObjectAtIndex:[selectedIndexArray[i] intValue]];
                 if([selectedIndexArray count]<=i || selectedIndex>=[rowsData[i] count]){
                     self.selectedRowIndexArray[i]=[NSNumber numberWithInt:0];
                     self.selectedRowValueArray[i]=rowsData[i][0];
                 }else{
-                    self.selectedRowIndexArray[i]=[NSNumber numberWithInt:selectedIndex];
-                    self.selectedRowValueArray[i]=[rowsData[i] safeObjectAtIndex:selectedIndex];
+                    self.selectedRowIndexArray[i]=selectedIndexArray[i];
+                    self.selectedRowValueArray[i]=selectedValue;
                 }
             }else if ([rowsData[i] isKindOfClass:[NSDictionary class]]){
-                NSString *selectedValue=self.selectedRowValueArray[i-1];
-                if([selectedIndexArray count]<=i || selectedIndex>=[[rowsData[i] safeObjectForKey:selectedValue] count]){
-                    self.selectedRowIndexArray[i]=[NSNumber numberWithInt:0];
-                    [self.selectedRowValueArray safeSetObject:[[rowsData[i] safeObjectForKey:selectedValue] safeObjectAtIndex:0] atIndexedSubscript:i default:@""];
-                }else{
-                    self.selectedRowIndexArray[i]=selectedIndexArray[i];
-                    NSString *rowValue=[[rowsData[i] safeObjectForKey:selectedValue]safeObjectAtIndex:selectedIndex];
-                    [self.selectedRowValueArray safeSetObject:rowValue atIndexedSubscript:i default:@""];
+                
+                id selectedValue=rowsData[i];
+                for (int j=0; j<self.selectedRowValueArray.count; j++) {
+                    if ([selectedValue isKindOfClass:[NSString class]]) {
+                        self.selectedRowIndexArray[i]=selectedIndexArray[i];
+                        [self.selectedRowValueArray safeSetObject:selectedValue atIndexedSubscript:i default:@""];
+                    }else{
+                        selectedValue=[selectedValue safeObjectForKey:self.selectedRowValueArray[j]];
+                    }
+                }
+                if ([selectedValue isKindOfClass:[NSArray class]]) {
+                    selectedValue=[selectedValue safeObjectAtIndex:[selectedIndexArray[i] intValue]];
+                    if ([selectedValue isKindOfClass:[NSString class]]) {
+                        self.selectedRowIndexArray[i]=selectedIndexArray[i];
+                        [self.selectedRowValueArray safeSetObject:selectedValue atIndexedSubscript:i default:@""];
+                    }
                 }
             }
         }

@@ -1,13 +1,13 @@
-#KKPicker
+# KKPicker
 
 简易选择器，包括文本选择，多文本关联选择，省市地区选择，时间选择。
 
 ![Alt Text](https://raw.githubusercontent.com/jaykon/KKPicker/master/KKPickerDemo/RES/demo.gif "sample")
 
-##样式修改
+## 样式修改
 修改KKPickerAbstract.h文件
 
-##调用方法
+## 调用方法
 ~~~
 //单列
 [KKStringPicker showPickerWithTitle:@"单列选择器" data:@[@"KK1",@"KK2"] selectedIndex:3 onCancel:^(KKStringPicker *picker) {
@@ -61,7 +61,7 @@ address.area=@"天河区";
 
 ~~~
 
-###require:
+### require:
 ARC;
 iOS5+;
 using block;
