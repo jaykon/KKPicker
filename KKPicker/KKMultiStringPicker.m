@@ -34,7 +34,6 @@
         self.selectedRowValueArray=[[NSMutableArray alloc] init];
         
         for (int i=0; i<[rowsData count]; i++) {
-            
             int selectedIndex=[[selectedIndexArray safeObjectAtIndex:i] intValue];
             
             if([rowsData[i] isKindOfClass:[NSArray class]]){
@@ -57,9 +56,18 @@
                         selectedValue=[selectedValue safeObjectForKey:self.selectedRowValueArray[j]];
                     }
                 }
+                
                 if ([selectedValue isKindOfClass:[NSArray class]]) {
-                    selectedValue=[selectedValue safeObjectAtIndex:[selectedIndexArray[i] intValue]];
-                    if ([selectedValue isKindOfClass:[NSString class]]) {
+                    if([selectedIndexArray count]<=i || selectedIndex>=[rowsData[i] count]){
+                        self.selectedRowIndexArray[i]=[NSNumber numberWithInt:0];
+                        if ([selectedValue count]>0) {
+                            self.selectedRowValueArray[i]=selectedValue[0];
+                        }else{
+                            self.selectedRowValueArray[i]=@"";
+                        }
+                        
+                    }else{
+                        selectedValue=[selectedValue safeObjectAtIndex:[selectedIndexArray[i] intValue]];
                         self.selectedRowIndexArray[i]=selectedIndexArray[i];
                         [self.selectedRowValueArray safeSetObject:selectedValue atIndexedSubscript:i default:@""];
                     }
