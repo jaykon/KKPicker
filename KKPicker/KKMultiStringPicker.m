@@ -30,12 +30,18 @@
         self.cancelBlock=cancelBlock;
         self.commitBlock=commitBlock;
         self.rowsData=rowsData;
+        if (selectedIndexArray.count<rowsData.count) {
+            NSMutableArray *temSelectedArray=[NSMutableArray arrayWithArray:selectedIndexArray];
+            for (NSInteger i=selectedIndexArray.count; i<[rowsData count]; i++) {
+                [temSelectedArray addObject:@(0)];
+            }
+            selectedIndexArray=[NSArray arrayWithArray:temSelectedArray];
+        }
         self.selectedRowIndexArray=[[NSMutableArray alloc] initWithArray:selectedIndexArray];
         self.selectedRowValueArray=[[NSMutableArray alloc] init];
         
-        for (int i=0; i<[rowsData count]; i++) {
-            int selectedIndex=[[selectedIndexArray safeObjectAtIndex:i] intValue];
-            
+        for (NSInteger i=0; i<[rowsData count]; i++) {
+            int selectedIndex=[selectedIndexArray[i] intValue];
             if([rowsData[i] isKindOfClass:[NSArray class]]){
                 NSString *selectedValue=[rowsData[i] safeObjectAtIndex:[selectedIndexArray[i] intValue]];
                 if([selectedIndexArray count]<=i || selectedIndex>=[rowsData[i] count]){
@@ -111,7 +117,7 @@
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
-    _selectedRowIndexArray[component]=[NSNumber numberWithInt:row];
+    _selectedRowIndexArray[component]=[NSNumber numberWithInteger:row];
     _selectedRowValueArray[component]=[self pickerView:_picker titleForRow:row forComponent:component];
     if(component<[_rowsData count]-1){
         [_picker reloadComponent:component+1];
